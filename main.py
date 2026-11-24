@@ -1,24 +1,19 @@
-"""One-sentence startup pitch for make.fun.
+#!/usr/bin/env python3
+"""Ridiculous at First Glance, Real by the Second.
 
-The program writes a single fixed pitch sentence to entry.txt inside
-the output directory. It is fully deterministic: no network, no clock,
-no randomness, and it writes nowhere except the output directory.
+Prints exactly one sentence pitching a startup idea so strange it
+sounds like a joke, yet specific enough to show the customers and
+the money: harness-trained ferrets that thread fiber through walls.
 """
 
-import os
-
 PITCH = (
-    "We lease retired grandmothers to lonely professionals for Sunday "
-    "dinner: $60 buys home cooking, unsolicited advice, and a hug \u2014 "
-    "and the grandmothers earn more than their pensions."
+    "FerretFlix rents harness-trained ferrets to cable companies, who "
+    "pay $40 a visit to thread fiber through walls no human hand can reach."
 )
 
 
-def main() -> None:
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(PITCH)
+def main():
+    print(PITCH)
 
 
 if __name__ == "__main__":
